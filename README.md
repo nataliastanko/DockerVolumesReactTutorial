@@ -65,7 +65,7 @@ Run
 
     docker-compose up
 
-## Step 5
+## Step 5.
 
 ### Running tests
 
@@ -84,6 +84,29 @@ Run
     docker run -it imageID npm run test
     
 Type ```w``` then ```p``` option and write ```App.test.js``` to excercise some interactivity.
+
+## Step 6.
+
+## Update tests configuration to work live
+
+### Attach to the existing container
+
+Run
+
+    docker-compose up
+    docker ps
+
+Copy ID of running react-app container and run
+
+    docker exec -it 69533969f08f npm run test
+
+or
+
+#### Use Docker Volumes
+
+Create a second service and run
+
+    docker-compose up --build
 
 ***
 
