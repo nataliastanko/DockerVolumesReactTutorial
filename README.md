@@ -108,6 +108,28 @@ Create a second service and run
 
     docker-compose up --build
 
+## Downsides
+
+Unfortunately you wont be able to manipulate the tests in interactive mode using ```docker-compose```, you will only get the live and here is the explanation:
+
+Run 
+
+    docker ps
+
+Copy ID of running tests container and attach terminal to stdin, stdout and stderr running:
+
+    docker attach ID
+
+In a new terminal create shell instance inside the open tests container
+
+    docker exec -it ID sh
+
+Run inside the opened container shell command prompt:
+
+    ps
+
+You should be able to see 2 npm processes running. We have access only to the first process while the tests are running by the secondary process. Witch ```docker attach``` accessing the secondary process is not an option. ```docker attach``` can handle only the primary process.
+
 ***
 
 ***
