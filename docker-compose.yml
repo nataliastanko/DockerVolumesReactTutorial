@@ -1,0 +1,12 @@
+version: "3"
+services:
+  react-app:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    restart: on-failure  
+    volumes: 
+      - /app/node_modules
+      - .:/app # dot is for current directory
