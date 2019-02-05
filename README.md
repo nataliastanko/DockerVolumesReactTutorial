@@ -65,6 +65,26 @@ Run
 
     docker-compose up
 
+## Step 5
+
+### Running tests
+
+Run
+
+    docker build -f Dockerfile.dev .
+
+Take imageID from ```Successfully built imageID`` and run tests
+
+    docker run cbf73ee5ecb8 npm run test
+
+#### Excercise
+
+Run
+
+    docker run -it imageID npm run test
+    
+Type ```w``` then ```p``` option and write ```App.test.js``` to excercise some interactivity.
+
 ***
 
 ***
