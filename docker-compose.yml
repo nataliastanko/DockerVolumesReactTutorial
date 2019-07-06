@@ -2,20 +2,20 @@ version: "3"
 services:
   react-app:
     build: 
-      context: .
-      dockerfile: Dockerfile.dev
+      context: . # pull project from local machine current dir
+      dockerfile: Dockerfile.dev # use this Dockerfile
     ports:
       - "3000:3000"
     restart: on-failure  
     volumes: 
-      - /app/node_modules
-      - .:/app # dot is for current directory
+      - /app/node_modules #no collon, do not map to not override it
+      - .:/app # map fromLocalMachine:toContaider
   tests: 
     build: 
       context: .
       dockerfile: Dockerfile.dev
     volumes: 
-      - /app/node_modules # to nod override it
+      - /app/node_modules
       - .:/app 
     # override starting command for tests
     command: ["npm", "run", "test"] 

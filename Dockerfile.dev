@@ -5,6 +5,7 @@ WORKDIR /app
 COPY ./package.json ./
 RUN npm install
 
-COPY . .
+# it is not strictly necessary
+COPY . . 
 
 CMD ["npm", "run", "start"]
