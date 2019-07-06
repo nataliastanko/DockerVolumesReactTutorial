@@ -189,6 +189,12 @@ Run
 
 Go to [localhost:8080](http://localhost:8080/)
 
+## Step 7. 
+
+### Test and deploy with [Travis-CI](https://travis-ci.org/)
+
+Create ```.travis.yml``` file.
+
 ***
 
 ***

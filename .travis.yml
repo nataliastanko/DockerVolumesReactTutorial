@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+before_install:
+  # build docker image (tagged)
+  - docker build -t nataliastanko/docker-react -f Dockerfile.dev .
+script:
+  # - docker run nataliastanko/docker-react npm run test-coverage -- --coverage
+  - docker run nataliastanko/docker-react npm run test -- --coverage
