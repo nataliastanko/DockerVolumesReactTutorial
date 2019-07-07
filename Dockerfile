@@ -18,6 +18,11 @@ RUN npm run build
 # 2. Run phase
 
 FROM nginx
+
+# EXPOSE is for AWS Elastic Beanstalk
+# port mapped for incoming traffic
+EXPOSE 80
+
 # copy from  the "builder" phase
 # from doc https://hub.docker.com/_/nginx
 # COPY static-html-directory /usr/share/nginx/html
