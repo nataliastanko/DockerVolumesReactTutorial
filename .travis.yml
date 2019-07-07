@@ -7,3 +7,16 @@ before_install:
 script:
   # - docker run nataliastanko/docker-react npm run test-coverage -- --coverage
   - docker run nataliastanko/docker-react npm run test -- --coverage
+deploy:
+  provider: elasticbeanstalk # includes set of instructions
+  region: "us-east-2" 
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-866787115363" # Amazon S3 bucket
+  bucket_path: "docker-react" # same as app
+  on:
+    branch: master
+  # AWS IAM, create user
+  access_key_id: $AWS_ACCESS_KEY # travis env var key name
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
