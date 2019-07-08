@@ -179,7 +179,7 @@ Run
 
 Go to [localhost:8080](http://localhost:8080/)
 
-## Step 7. Test and deploy with [Travis-CI](https://travis-ci.org/)
+## Step 8. Test and deploy with [Travis-CI](https://travis-ci.org/)
 
 Create ```.travis.yml``` file.
 
@@ -211,6 +211,14 @@ Create ```AWS_ACCESS_KEY``` key with ```Access key ID``` value.
 Create ```AWS_SECRET_KEY``` key with ```Secret access key``` value.
 
 DO NOT DISPLAY VALUE IN BUILD LOG.
+
+## Step 9. Cleaning Up AWS Resources
+
+to not get charged.
+
+We need to clean:
+
+* Elastic Beanstak - AWS Elastic Beanstak dashboard:[project]:Actions:Delete application
 
 ***
 
